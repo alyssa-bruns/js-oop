@@ -30,19 +30,32 @@ function Circle(radius) {
   this.radius = radius
   //use local variables to control the scope and make private outside the obj
   let defaultLocation = { x: 0, y: 0 }
-  let computeOptimumLocation = function (factor) {
-    //...
+
+  this.getDefaultLocation = function () {
+    return defaultLocation
   }
   this.draw = function () {
-    computeOptimumLocation(0.1)
     console.log('constructor function')
   }
+
+  //Define a getter/setter
+  Object.defineProperty(this, 'defaultLocation', {
+    get: function () {
+      return defaultLocation
+    },
+    set: function (value) {
+      if (!value.x || !value.y) {
+        throw new Error('Invalid location.')
+      }
+      defaultLocation = value
+    },
+  })
 }
 
-//What is actually happening on line 38
+//What is actually happening on line 57
 Circle.call({}, 1)
 const another = new Circle(1)
-
+// another.defaultLocation = 34
 another.draw()
 
 //Add new property
