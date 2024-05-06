@@ -80,3 +80,19 @@ console.log(keys)
 if ('radius' in another) {
   console.log('Another has a radius.')
 }
+
+function Stopwatch(timer) {
+  this.start = function () {
+    console.time(timer)
+    console.log('start')
+  }
+  this.stop = function () {
+    console.timeEnd(timer)
+  }
+  this.duration = function () {
+    console.timeLog(timer)
+  }
+  this.reset = function () {}
+}
+
+const sw = new Stopwatch('timer')
