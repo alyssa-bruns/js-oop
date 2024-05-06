@@ -33,6 +33,13 @@ function Circle(radius) {
   }
 }
 
+//Add new property
+Circle.location = { x: 1 }
+Circle['location'] = { x: 1 }
+
+//Dynamically delete properties
+delete Circle.location
+
 //What is actually happening on line 38
 Circle.call({}, 1)
 const another = new Circle(1)
