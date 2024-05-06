@@ -10,6 +10,8 @@ const circle = {
   },
 }
 
+circle.draw()
+
 //Factory Function
 function createCircle(radius) {
   return {
@@ -21,5 +23,14 @@ function createCircle(radius) {
 }
 
 const circleFactory = createCircle(1)
-circle.draw()
 circleFactory.draw()
+
+//Constructor Function
+function Circle(radius) {
+  this.radius = radius
+  this.draw = function () {
+    console.log('constructor function')
+  }
+}
+const another = new Circle(1)
+another.draw()
