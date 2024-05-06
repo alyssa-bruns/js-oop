@@ -32,5 +32,9 @@ function Circle(radius) {
     console.log('constructor function')
   }
 }
+
+//What is actually happening on line 38
+Circle.call({}, 1)
 const another = new Circle(1)
+
 another.draw()
