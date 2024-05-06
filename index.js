@@ -45,3 +45,19 @@ another['location'] = { x: 1 }
 
 //Dynamically delete properties
 delete another.location
+
+// Enumerating Properties - For/In loops
+for (let key in another) {
+  if (typeof another[key] !== 'function') {
+    console.log(key, another[key])
+  }
+}
+
+//Retrieve all keys
+const keys = Object.keys(another)
+console.log(keys)
+
+//Check for existance of property/method
+if ('radius' in another) {
+  console.log('Another has a radius.')
+}
