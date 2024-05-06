@@ -28,7 +28,13 @@ circleFactory.draw()
 //Constructor Function
 function Circle(radius) {
   this.radius = radius
+  //use local variables to control the scope and make private outside the obj
+  let defaultLocation = { x: 0, y: 0 }
+  let computeOptimumLocation = function (factor) {
+    //...
+  }
   this.draw = function () {
+    computeOptimumLocation(0.1)
     console.log('constructor function')
   }
 }
