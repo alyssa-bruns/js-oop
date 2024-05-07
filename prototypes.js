@@ -5,3 +5,6 @@ Object.defineProperty(person, 'name', {
   enumerable: false,
   configurable: false,
 })
+
+//Get Prototype
+console.log(Object.getPrototypeOf(person))
