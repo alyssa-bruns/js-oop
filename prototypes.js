@@ -12,7 +12,7 @@ console.log(Object.getPrototypeOf(person))
 function Circle(radius) {
   this.radius = radius
   this.move = function () {
-    //Can reference protoype members in instance methods and vise versa
+    //Can reference protoype members in instance members and vise versa
     // this.draw()
     console.log('move')
   }
@@ -40,3 +40,8 @@ Circle.prototype.toString = function () {
 }
 
 console.log(c1.toString())
+//Object.kets only return instance members
+console.log(Object.keys(c1))
+
+//For/in loop returns instnace + prototype members
+for (let key in c1) console.log(key)
