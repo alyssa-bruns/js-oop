@@ -40,5 +40,15 @@ function Square(size) {
 
 extend(Square, Shape)
 
+function Triangle() {}
+
+extend(Triangle, Shape)
+
+//Method Overriding
+Triangle.prototype.duplication = function () {
+  console.log('duplicate triangle')
+}
+
 const s = new Shape()
 const c = new Circle(1, 'yellow')
+const t = new Triangle()
