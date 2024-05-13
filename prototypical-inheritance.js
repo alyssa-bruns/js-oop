@@ -6,17 +6,25 @@ function Shape(color) {
 Shape.prototype.duplication = function () {
   console.log('duplicate')
 }
+
+//Refactor 21-25 so it doesn't have to be duplicated with each new shape
+//Child and Parent are capitalized because they are constructor functions
+function extend(Child, Parent) {
+  Child.prototype = Object.create(Parent.prototype)
+  Child.prototype.constructor = Child
+}
 function Circle(radius, color) {
   //Superconstructor
   Shape.call(this, color)
   this.radius = radius
 }
-//new circleBase object that inherits from shapeBase
-//Changes the constructor to Shape
-Circle.prototype = Object.create(Shape.prototype)
+// //new circleBase object that inherits from shapeBase
+// //Changes the constructor to Shape
+// Circle.prototype = Object.create(Shape.prototype)
+// //Best practice to reset constructor after resetting prototype
+// Circle.prototype.constructor = Circle
 
-//Best practice to reset constructor after resetting prototype
-Circle.prototype.constructor = Circle
+extend(Circle, Shape)
 
 Circle.prototype.draw = function () {
   console.log('draw')
@@ -26,8 +34,11 @@ function Square(size) {
   this.size = size
 }
 
-Square.prototype = Object.create(Shape.prototype)
-Square.prototype.constructor = Square
+// Square.prototype = Object.create(Shape.prototype)
+// Square.prototype.constructor = Square
+//Refactor
+
+extend(Square, Shape)
 
 const s = new Shape()
 const c = new Circle(1, 'yellow')
