@@ -7,7 +7,9 @@ function Circle(radius) {
   this.radius = radius
 }
 //new circleBase object that inherits from shapeBase
+//Changes the constructor to Shape
 Circle.prototype = Object.create(Shape.prototype)
+Circle.prototype.constructor = Circle
 
 Circle.prototype.draw = function () {
   console.log('draw')
