@@ -6,7 +6,9 @@ function Shape(color) {
 Shape.prototype.duplication = function () {
   console.log('duplicate')
 }
-function Circle(radius) {
+function Circle(radius, color) {
+  Shape.call(this, color)
+
   this.radius = radius
 }
 //new circleBase object that inherits from shapeBase
@@ -21,4 +23,4 @@ Circle.prototype.draw = function () {
 }
 
 const s = new Shape()
-const c = new Circle(1)
+const c = new Circle(1, 'yellow')
