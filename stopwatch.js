@@ -60,3 +60,5 @@ Stopwatch.prototype.reset = function () {
 }
 
 const sw = new Stopwatch()
+
+//Moving methods to the prototypes to optimize methods but it broke abstraction
