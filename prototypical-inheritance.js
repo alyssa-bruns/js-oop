@@ -7,8 +7,8 @@ Shape.prototype.duplication = function () {
   console.log('duplicate')
 }
 function Circle(radius, color) {
+  //Superconstructor
   Shape.call(this, color)
-
   this.radius = radius
 }
 //new circleBase object that inherits from shapeBase
@@ -21,6 +21,13 @@ Circle.prototype.constructor = Circle
 Circle.prototype.draw = function () {
   console.log('draw')
 }
+
+function Square(size) {
+  this.size = size
+}
+
+Square.prototype = Object.create(Shape.prototype)
+Square.prototype.constructor = Square
 
 const s = new Shape()
 const c = new Circle(1, 'yellow')
