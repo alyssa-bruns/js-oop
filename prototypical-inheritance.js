@@ -46,6 +46,8 @@ extend(Triangle, Shape)
 
 //Method Overriding
 Triangle.prototype.duplication = function () {
+  //Still call parent method
+  Shape.prototype.duplication.call(this)
   console.log('duplicate triangle')
 }
 
