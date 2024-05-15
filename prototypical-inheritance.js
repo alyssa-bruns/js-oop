@@ -67,3 +67,40 @@ for (let shape of shapes) {
 const s = new Shape()
 const c = new Circle(1, 'yellow')
 const t = new Triangle()
+
+//Mixins
+const canEat = {
+  eat: function () {
+    this.hunger--
+    console.log('eating')
+  },
+}
+
+const canWalk = {
+  walk: function () {
+    console.log('walking')
+  },
+}
+
+const canSwim = {
+  swim: function () {
+    console.log('swim')
+  },
+}
+
+//to copy properties/methods of one object to another
+const man = Object.assign({}, canEat, canWalk)
+// console.log(man)
+
+//using constructor function
+function Woman() {}
+//modifies constructor and adds methods
+Object.assign(Woman.prototype, canEat, canWalk)
+const woman = new Woman()
+console.log(woman)
+
+function Goldfish() {}
+Object.assign(Goldfish.prototype, canEat, canSwim)
+
+const goldfish = new Goldfish()
+console.log(goldfish)
