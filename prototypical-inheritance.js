@@ -51,6 +51,19 @@ Triangle.prototype.duplication = function () {
   console.log('duplicate triangle')
 }
 
+function Rectangle() {}
+extend(Rectangle, Shape)
+Rectangle.prototype.duplication = function () {
+  console.log('duplicate rectangle')
+}
+//polymorphism ex: we have many forms for the duplication method
+
+const shapes = [new Triangle(), new Rectangle()]
+
+for (let shape of shapes) {
+  shape.duplication()
+}
+
 const s = new Shape()
 const c = new Circle(1, 'yellow')
 const t = new Triangle()
