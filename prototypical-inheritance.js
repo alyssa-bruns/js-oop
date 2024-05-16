@@ -123,3 +123,17 @@ function HtmlElement() {
 HtmlElement.prototype.focus = function () {
   console.log('focused')
 }
+
+const proto = new HtmlElement()
+
+function HtmlSelectElement(items = []) {
+  this.items = items
+  this.addItem = function (item) {
+    this.items.push(item)
+  }
+  this.removeItem = function (item) {
+    this.items.splice(this.items.indexOf(item), 1)
+  }
+}
+
+HtmlSelectElement.prototype = proto
