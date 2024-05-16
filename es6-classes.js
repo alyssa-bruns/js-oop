@@ -14,7 +14,7 @@ class Circle {
     //define a method in the constructor so it is not added to the prototype
     this.move = function () {
       console.log(this)
-    }
+    } // strict mode
   }
 
   //Defining methods
@@ -57,3 +57,21 @@ const sayGoodbye = function () {}
 class Triangle {}
 // Class Expression - not used as much // more complex // less clean
 const Square = class {}
+
+//Private Properties and methods - use symbols to create private properties/methods
+const _radius = Symbol() // unique identifier (will create new everytime called)
+const _draw = Symbol()
+class Oval {
+  constructor(radius) {
+    // Can use a symbol as a property name instead of a string
+    this[_radius] = radius
+  }
+
+  [_draw]() {
+    //unique identifier will be used as the name of the method
+  }
+}
+
+const o = new Oval(1)
+const key = Object.getOwnPropertySymboks(c)[0]
+console.log(c[key])
