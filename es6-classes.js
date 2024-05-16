@@ -5,6 +5,7 @@
 //   }
 // }
 
+// classes are essentially constructor functions
 class Circle {
   //Body can contain properties
   constructor(radius) {
