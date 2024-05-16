@@ -6,6 +6,7 @@
 // }
 
 // classes are essentially constructor functions
+// typeof Circle returns "function"
 class Circle {
   //Body can contain properties
   constructor(radius) {
@@ -22,3 +23,10 @@ class Circle {
 }
 
 const c = new Circle(1)
+sayHello()
+// Hoisting = raised to the top of the code
+
+//Function Delcaration syntax - hoisted
+function sayHello() {}
+//Function Expression syntax
+const sayGoodbye = function () {}
