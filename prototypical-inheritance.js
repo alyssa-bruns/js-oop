@@ -137,3 +137,4 @@ function HtmlSelectElement(items = []) {
 }
 
 HtmlSelectElement.prototype = proto
+HtmlSelectElement.prototype.constructor = HtmlSelectElement
