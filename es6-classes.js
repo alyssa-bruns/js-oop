@@ -17,12 +17,26 @@ class Circle {
 
   //Defining methods
   //All methods will be added to the prototype
+  //Instance method = available on an instance of a class (object)
   draw() {
     console.log('draw')
   }
+  // Static method - not avilable on c.parse, but on the class referene (Circle.parse)
+  static parse(str) {
+    const radius = JSON.parse(str).radius
+    return new Circle(radius)
+  }
+
+  //
 }
 
 const c = new Circle(1)
+const circle = Circle.parse('{"radius": 1}')
+console.log(c)
+console.log(circle)
+
+//Static methods = available on the class itself, not the function
+//Used to create utility functions / not specific to a given object
 
 // Hoisting = raised to the top of the code
 
