@@ -61,6 +61,7 @@ const Square = class {}
 //Private Properties and methods - use symbols to create private properties/methods
 const _radius = Symbol() // unique identifier (will create new everytime called)
 const _draw = Symbol()
+
 class Oval {
   constructor(radius) {
     // Can use a symbol as a property name instead of a string
@@ -73,5 +74,5 @@ class Oval {
 }
 
 const o = new Oval(1)
-const key = Object.getOwnPropertySymboks(c)[0]
-console.log(c[key])
+const key = Object.getOwnPropertySymbols(o)[0]
+console.log(o[key])
