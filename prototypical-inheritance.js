@@ -152,3 +152,10 @@ function HtmlImageElement(src) {
 }
 HtmlImageElement.prototype = proto
 HtmlImageElement.prototype.constructor = HtmlImageElement
+
+//iterate over elements array to show each render method
+elements = [new HtmlSelectElement([1, 2, 3]), new HtmlImageElement('https://')]
+
+for (let element of elements) {
+  console.log(element.render())
+}
