@@ -23,10 +23,19 @@ class Circle {
 }
 
 const c = new Circle(1)
-sayHello()
+
 // Hoisting = raised to the top of the code
+
+sayHello() //works before it is initialized b/c hoisted
+// sayGoodbye does not work = not hoisted
 
 //Function Delcaration syntax - hoisted
 function sayHello() {}
 //Function Expression syntax
 const sayGoodbye = function () {}
+
+// Classes can be declared using declaration or expresion syntax
+// Class Declaration = NOT HOISTED LIKE FUNCTION DECLARATION
+class Triangle {}
+// Class Expression - not used as much // more complex // less clean
+const Square = class {}
