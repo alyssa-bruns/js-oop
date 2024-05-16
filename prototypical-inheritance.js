@@ -138,3 +138,12 @@ function HtmlSelectElement(items = []) {
 
 HtmlSelectElement.prototype = proto
 HtmlSelectElement.prototype.constructor = HtmlSelectElement
+
+function HtmlImageElement(src) {
+  this.src = src
+  this.render = function () {
+    console.log(`<image src="${this.src}" />`)
+  }
+}
+HtmlImageElement.prototype = proto
+HtmlImageElement.prototype.constructor = HtmlImageElement
