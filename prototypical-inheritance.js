@@ -7,7 +7,7 @@ Shape.prototype.duplication = function () {
   console.log('duplicate')
 }
 
-//Refactor 21-25 so it doesn't have to be duplicated with each new shape
+//Refactor so it doesn't have to be duplicated with each new shape
 //Child and Parent are capitalized because they are constructor functions
 function extend(Child, Parent) {
   Child.prototype = Object.create(Parent.prototype)
@@ -69,6 +69,13 @@ const c = new Circle(1, 'yellow')
 const t = new Triangle()
 
 //Mixins
+//use below function to replace Object.assign
+function mixin(target, ...sources) {
+  Object.assign(target, ...sources)
+}
+// use rest parameter when you don't know how many arguments (creates an array)
+// spread operator separates the array
+
 const canEat = {
   eat: function () {
     this.hunger--
@@ -89,7 +96,7 @@ const canSwim = {
 }
 
 //to copy properties/methods of one object to another
-const man = Object.assign({}, canEat, canWalk)
+const man = mixin({}, canEat, canWalk)
 // console.log(man)
 
 //using constructor function
@@ -104,3 +111,15 @@ Object.assign(Goldfish.prototype, canEat, canSwim)
 
 const goldfish = new Goldfish()
 console.log(goldfish)
+
+//Inheritance Challenge
+
+function HtmlElement() {
+  this.click = function () {
+    console.log('clicked')
+  }
+}
+
+HtmlElement.prototype.focus = function () {
+  console.log('focused')
+}
