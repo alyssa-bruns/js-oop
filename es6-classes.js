@@ -12,7 +12,9 @@ class Circle {
   constructor(radius) {
     this.radius = radius
     //define a method in the constructor so it is not added to the prototype
-    this.move = function () {}
+    this.move = function () {
+      console.log(this)
+    }
   }
 
   //Defining methods
@@ -26,14 +28,16 @@ class Circle {
     const radius = JSON.parse(str).radius
     return new Circle(radius)
   }
-
-  //
 }
 
 const c = new Circle(1)
 const circle = Circle.parse('{"radius": 1}')
 console.log(c)
 console.log(circle)
+
+const move = c.move
+//function call -> points to global object / window in browser
+move()
 
 //Static methods = available on the class itself, not the function
 //Used to create utility functions / not specific to a given object
