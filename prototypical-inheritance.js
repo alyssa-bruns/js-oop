@@ -128,6 +128,11 @@ const proto = new HtmlElement()
 
 function HtmlSelectElement(items = []) {
   this.items = items
+  this.render = function (items) {
+    return `<select>${this.items
+      .map((item) => `<option>${item}</option>`)
+      .join('')}</select>`
+  }
   this.addItem = function (item) {
     this.items.push(item)
   }
@@ -142,7 +147,7 @@ HtmlSelectElement.prototype.constructor = HtmlSelectElement
 function HtmlImageElement(src) {
   this.src = src
   this.render = function () {
-    console.log(`<image src="${this.src}" />`)
+    return `<image src="${this.src}" />`
   }
 }
 HtmlImageElement.prototype = proto
