@@ -130,6 +130,7 @@ class Heart extends Shape {
   }
   //overriding
   move() {
+    super.move() //to still use the parent method
     console.log('circle move')
   }
 }
