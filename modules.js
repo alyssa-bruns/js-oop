@@ -18,4 +18,16 @@ class Circle {
 }
 
 // module.exports.Circle = Circle
-module.exports = Circle
+// module.exports = Circle
+
+// ES6 Modules
+// Public Interface
+export class Oval {
+  constructor(radius) {
+    _radius.set(this, radius)
+  }
+
+  draw() {
+    console.log('Oval with radius ' + _radius.get(this))
+  }
+}
