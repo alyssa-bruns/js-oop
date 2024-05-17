@@ -36,8 +36,7 @@ function Square(size) {
 
 // Square.prototype = Object.create(Shape.prototype)
 // Square.prototype.constructor = Square
-//Refactor
-
+// Refactor
 extend(Square, Shape)
 
 function Triangle() {}
