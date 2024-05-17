@@ -93,6 +93,11 @@ class Spiral {
     _move.get(this)()
     console.log('draw')
   }
+
+  //To get from outside
+  getRadius() {
+    return _radiuswp.get(this)
+  }
 }
 
 const sp = new Spiral(1)
