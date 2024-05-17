@@ -128,6 +128,10 @@ class Heart extends Shape {
   draw() {
     console.log('draw')
   }
+  //overriding
+  move() {
+    console.log('circle move')
+  }
 }
 
 const h = new Heart('red', 1)
