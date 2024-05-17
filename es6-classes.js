@@ -110,6 +110,9 @@ const sp = new Spiral(1)
 //Inheritance
 
 class Shape {
+  constructor(color) {
+    this.color = color
+  }
   move() {
     console.log('move')
   }
@@ -117,9 +120,14 @@ class Shape {
 
 // to inherit from Shape class
 class Heart extends Shape {
+  // if you have a constructor in the parent - must call with super() to initialize base obj
+  constructor(color, radius) {
+    super(color)
+    this.radius = radius
+  }
   draw() {
     console.log('draw')
   }
 }
 
-const h = new Heart()
+const h = new Heart('red', 1)
