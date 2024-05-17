@@ -106,3 +106,20 @@ class Spiral {
 }
 
 const sp = new Spiral(1)
+
+//Inheritance
+
+class Shape {
+  move() {
+    console.log('move')
+  }
+}
+
+// to inherit from Shape class
+class Heart extends Shape {
+  draw() {
+    console.log('draw')
+  }
+}
+
+const h = new Heart()
