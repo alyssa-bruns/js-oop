@@ -95,8 +95,13 @@ class Spiral {
   }
 
   //To get from outside
-  getRadius() {
+  //getRadius() and call as function or to call as a property use below
+  get radius() {
     return _radiuswp.get(this)
+  }
+  set radius(value) {
+    if (value <= 0) throw new Error('invalid radius')
+    _radiuswp.set(this, value)
   }
 }
 
