@@ -79,13 +79,19 @@ console.log(o[key])
 
 //Weakmaps for private properties/methods
 const _radiuswp = new WeakMap()
+const _move = new WeakMap()
 class Spiral {
   constructor(radius) {
     _radiuswp.set(this, radius)
+    // use arrow method to inherit from constructor function
+    _move.set(this, () => {
+      console.log('move', this)
+    })
   }
   //to return the value of the radius property
   draw() {
-    _radius.get(this)
+    _move.get(this)()
+    console.log('draw')
   }
 }
 
