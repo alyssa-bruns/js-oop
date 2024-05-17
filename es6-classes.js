@@ -76,3 +76,17 @@ class Oval {
 const o = new Oval(1)
 const key = Object.getOwnPropertySymbols(o)[0]
 console.log(o[key])
+
+//Weakmaps for private properties/methods
+const _radiuswp = new WeakMap()
+class Spiral {
+  constructor(radius) {
+    _radiuswp.set(this, radius)
+  }
+  //to return the value of the radius property
+  draw() {
+    _radius.get(this)
+  }
+}
+
+const sp = new Spiral(1)
