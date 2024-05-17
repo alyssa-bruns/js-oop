@@ -40,3 +40,28 @@ export class Oval {
 // npm init --yes
 // npm i babel-cli@6.26.0 babel-core@6.26.0 babel-preset-env@1.6.1 --save-dev
 // cli - command line, core -core, preset- understands all new features
+
+// Workflow
+
+// npm i -g webpack-cli@2.0.14
+// webpack -cli init
+
+//Will have multiple bundles? No
+//identify starting point? create src folder to holf all js files "./src/index"
+// Which folder will generated bundles be in
+//Use in production? No
+// Will you be using ES6? Yes
+
+//npm init --yes
+// add to script
+// "build": "webpack"
+// npm run build
+
+// in index.html
+// remove module and change src to "dist/main.bundle.js"
+
+// will have to run npm run build after editing source code
+// OR
+// in package.json
+// update "build: webpack -w" to auto update bundle
+// run npm run build again
